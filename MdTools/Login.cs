@@ -105,5 +105,18 @@ namespace MdTools
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (System.IO.File.Exists(Application.StartupPath + "\\username.txt")){
+                string tbUserRe = System.IO.File.ReadAllText(Application.StartupPath + "\\username.txt");
+                tbUser.Text = tbUserRe;
+            }
+            if (System.IO.File.Exists(Application.StartupPath + "\\password.txt"))
+            {
+                string txtPassWordRe = System.IO.File.ReadAllText(Application.StartupPath + "\\password.txt");
+                txtPassWord.Text = txtPassWordRe;
+            }
+        }
     }
 }
