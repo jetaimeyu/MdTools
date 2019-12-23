@@ -16,6 +16,7 @@ namespace MdTools
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
+            //Application.Run(new Form1());
             if (new Login().ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new ProdModelAdd());

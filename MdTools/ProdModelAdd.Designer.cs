@@ -33,11 +33,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdModelAdd));
             this.DirTree = new System.Windows.Forms.TreeView();
             this.ProdListGrid = new System.Windows.Forms.DataGridView();
-            this.TipsLabel = new System.Windows.Forms.Label();
             this.产品ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.产品名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.型号列表 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.操作 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TipsLabel = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.uploadPro = new System.Windows.Forms.Label();
+            this.LastPage = new System.Windows.Forms.Button();
+            this.NextPage = new System.Windows.Forms.Button();
+            this.PageTips = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProdListGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,22 +70,12 @@
             this.产品名称,
             this.型号列表,
             this.操作});
-            this.ProdListGrid.Location = new System.Drawing.Point(178, 12);
+            this.ProdListGrid.Location = new System.Drawing.Point(190, 12);
             this.ProdListGrid.Name = "ProdListGrid";
             this.ProdListGrid.RowTemplate.Height = 23;
-            this.ProdListGrid.Size = new System.Drawing.Size(622, 426);
+            this.ProdListGrid.Size = new System.Drawing.Size(610, 407);
             this.ProdListGrid.TabIndex = 1;
             this.ProdListGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProdListGrid_CellContentClick);
-            // 
-            // TipsLabel
-            // 
-            this.TipsLabel.AutoSize = true;
-            this.TipsLabel.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TipsLabel.Location = new System.Drawing.Point(342, 139);
-            this.TipsLabel.Name = "TipsLabel";
-            this.TipsLabel.Size = new System.Drawing.Size(104, 19);
-            this.TipsLabel.TabIndex = 2;
-            this.TipsLabel.Text = "数据加载中";
             // 
             // 产品ID
             // 
@@ -125,11 +120,71 @@
             this.操作.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.操作.ToolTipText = "导入型号";
             // 
+            // TipsLabel
+            // 
+            this.TipsLabel.AutoSize = true;
+            this.TipsLabel.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TipsLabel.Location = new System.Drawing.Point(342, 139);
+            this.TipsLabel.Name = "TipsLabel";
+            this.TipsLabel.Size = new System.Drawing.Size(104, 19);
+            this.TipsLabel.TabIndex = 2;
+            this.TipsLabel.Text = "数据加载中";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(266, 210);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(338, 27);
+            this.progressBar1.TabIndex = 3;
+            this.progressBar1.Visible = false;
+            // 
+            // uploadPro
+            // 
+            this.uploadPro.AutoSize = true;
+            this.uploadPro.Location = new System.Drawing.Point(400, 210);
+            this.uploadPro.Name = "uploadPro";
+            this.uploadPro.Size = new System.Drawing.Size(0, 12);
+            this.uploadPro.TabIndex = 4;
+            // 
+            // LastPage
+            // 
+            this.LastPage.Location = new System.Drawing.Point(321, 425);
+            this.LastPage.Name = "LastPage";
+            this.LastPage.Size = new System.Drawing.Size(75, 23);
+            this.LastPage.TabIndex = 5;
+            this.LastPage.Text = "上一页";
+            this.LastPage.UseVisualStyleBackColor = true;
+            this.LastPage.Click += new System.EventHandler(this.LastPage_Click);
+            // 
+            // NextPage
+            // 
+            this.NextPage.Location = new System.Drawing.Point(432, 425);
+            this.NextPage.Name = "NextPage";
+            this.NextPage.Size = new System.Drawing.Size(75, 23);
+            this.NextPage.TabIndex = 6;
+            this.NextPage.TabStop = false;
+            this.NextPage.Text = "下一页";
+            this.NextPage.UseVisualStyleBackColor = true;
+            this.NextPage.Click += new System.EventHandler(this.NextPage_Click);
+            // 
+            // PageTips
+            // 
+            this.PageTips.AutoSize = true;
+            this.PageTips.Location = new System.Drawing.Point(569, 431);
+            this.PageTips.Name = "PageTips";
+            this.PageTips.Size = new System.Drawing.Size(0, 12);
+            this.PageTips.TabIndex = 7;
+            // 
             // ProdModelAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PageTips);
+            this.Controls.Add(this.NextPage);
+            this.Controls.Add(this.LastPage);
+            this.Controls.Add(this.uploadPro);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.TipsLabel);
             this.Controls.Add(this.ProdListGrid);
             this.Controls.Add(this.DirTree);
@@ -153,6 +208,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 产品名称;
         private System.Windows.Forms.DataGridViewButtonColumn 型号列表;
         private System.Windows.Forms.DataGridViewButtonColumn 操作;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label uploadPro;
+        private System.Windows.Forms.Button LastPage;
+        private System.Windows.Forms.Button NextPage;
+        private System.Windows.Forms.Label PageTips;
     }
 }
 

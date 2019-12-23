@@ -12,6 +12,7 @@ namespace MdTools.Result
     public class DataResult
     {
         public new List<ProdItem> DataRows;
+        public int TotalCount { set; get; }
     }
     public class ProdItem
     {
