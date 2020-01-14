@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -13,9 +14,9 @@ using static System.Net.WebRequestMethods;
 
 namespace MdTools
 {
-    public partial class Login : Form
+    public partial class 登录 : Form
     {
-        public Login()
+        public 登录()
         {
             InitializeComponent();
             string ss = Application.ProductVersion;
@@ -108,7 +109,8 @@ namespace MdTools
 
         private void Login_Load(object sender, EventArgs e)
         {
-            if (System.IO.File.Exists(Application.StartupPath + "\\username.txt")){
+            if (System.IO.File.Exists(Application.StartupPath + "\\username.txt"))
+            {
                 string tbUserRe = System.IO.File.ReadAllText(Application.StartupPath + "\\username.txt");
                 tbUser.Text = tbUserRe;
             }
@@ -117,6 +119,45 @@ namespace MdTools
                 string txtPassWordRe = System.IO.File.ReadAllText(Application.StartupPath + "\\password.txt");
                 txtPassWord.Text = txtPassWordRe;
             }
+
+
+            //string StartPath = Application.StartupPath;
+            //if (!Directory.Exists(StartPath + "\\db"))
+            //    Directory.CreateDirectory(StartPath + "\\db");
+            //var fileName = StartPath + "/db/data.db";
+
+            //SQLiteConnection.CreateFile(fileName);
+            //MakeRedCode();
         }
+
+
+        /// <summary>
+        /// 生成红包码
+        /// </summary>
+        private void MakeRedCode()
+        {
+            string m_sql = "insert into RedCode (RelationCode, RedCode)values(";
+
+            for (int i = 0; i < 50; i++)
+            {
+                m_sql += $"'{ GetNewGuidLong()}','https://m.maidiyun.com/?HB:{GetNewGuidLong()}'),(";
+            }
+            string ss = m_sql.Remove(m_sql.Length-2, 2);
+
+            //SQLiteCommand dbCommand = new SQLiteCommand();
+            //dbCommand.CommandText = ss;
+            SQLiteHelper.ExecuteNonQuery(SQLiteHelper.LocalDbConnectionString , ss, CommandType.Text);
+        }
+
+
+        /// <summary>
+        /// 获取一个新的GUID转uLong
+        /// </summary>
+        /// <returns></returns>
+        public static long GetNewGuidLong()
+        {
+            return BitConverter.ToInt64(Guid.NewGuid().ToByteArray(), 0);
+        }
+
     }
 }

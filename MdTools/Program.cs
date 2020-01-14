@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -13,14 +14,20 @@ namespace MdTools
         [STAThread]
         static void Main()
         {
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo("log4net.config"));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
-            //Application.Run(new Form1());
-            if (new Login().ShowDialog() == DialogResult.OK)
+            if (new 登录().ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new ProdModelAdd());
+                Application.Run(new FormGetRedCode());
             }
+                //Application.Run(new Login());
+                //Application.Run(new Form1());
+             //   Application.Run(new FormScanCode());
+            //if (new Login().ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new ProdModelAdd());
+            //}
         }
     }
 }

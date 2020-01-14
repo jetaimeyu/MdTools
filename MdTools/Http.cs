@@ -83,6 +83,49 @@ namespace MdTools
             }
           
         }
+        /// <summary>
+        /// 下载文件
+        /// </summary>
+        /// <param name="downloadUrl"></param>
+        /// <param name="filename"></param>
+        /// <param name="filepath"></param>
+        public static void downfile(string downloadUrl, string filename)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(downloadUrl);
+            request.Headers.Add("Authorization", "Bearer " + Common.user.Token);
+            request.Timeout = 15000;
+            HttpWebResponse hwp = (HttpWebResponse)request.GetResponse();
+            Stream ss = hwp.GetResponseStream();
+            byte[] buffer = new byte[10240];
+            //if (!Directory.Exists(filepath))
+            //{
+            //    Directory.CreateDirectory(filepath);
+            //}
+            //if (!File.Exists(filename))
+            //{
+            //    File.Create(filename);
+               
+            //}
+            FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.Write);
+            try
+            {
+                int i;
+                while ((i = ss.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    fs.Write(buffer, 0, i);
+                }
+                fs.Close();
+                ss.Close();
+            }
+            catch (Exception)
+            {
+                fs.Close();
+                ss.Close();
+                throw;
+            }
+
+
+        }
 
     }
 }

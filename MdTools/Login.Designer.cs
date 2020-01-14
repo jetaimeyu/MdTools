@@ -1,6 +1,6 @@
 ﻿namespace MdTools
 {
-    partial class Login
+    partial class 登录
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(登录));
             this.tbUser = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,9 +46,10 @@
             this.tbUser.Location = new System.Drawing.Point(68, 164);
             this.tbUser.Margin = new System.Windows.Forms.Padding(4);
             this.tbUser.Name = "tbUser";
+            this.tbUser.ReadOnly = true;
             this.tbUser.Size = new System.Drawing.Size(185, 30);
             this.tbUser.TabIndex = 13;
-            this.tbUser.Text = "admin@80037366";
+            this.tbUser.Text = "ppj@80038203";
             // 
             // btnDelete
             // 
@@ -67,17 +68,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(61, 59);
+            this.label3.Location = new System.Drawing.Point(91, 56);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 38);
+            this.label3.Size = new System.Drawing.Size(162, 38);
             this.label3.TabIndex = 20;
-            this.label3.Text = "迈迪实施工具包";
+            this.label3.Text = "红包码领用";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // chbIsRemember
             // 
             this.chbIsRemember.AutoSize = true;
+            this.chbIsRemember.Enabled = false;
             this.chbIsRemember.Location = new System.Drawing.Point(218, 253);
             this.chbIsRemember.Margin = new System.Windows.Forms.Padding(4);
             this.chbIsRemember.Name = "chbIsRemember";
@@ -139,7 +141,7 @@
             this.lbVersion.TabIndex = 21;
             this.lbVersion.Text = "V 1.0.1.0";
             // 
-            // Login
+            // 登录
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +156,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Login";
+            this.Name = "登录";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
