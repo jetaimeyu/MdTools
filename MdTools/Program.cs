@@ -17,13 +17,16 @@ namespace MdTools
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo("log4net.config"));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             if (new 登录().ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new FormGetRedCode());
+                Application.Run(new FrmFillCode());
+                //Application.Run(new FormScanCode());
+                //Application.Run(new FormGetRedCode());
             }
-                //Application.Run(new Login());
-                //Application.Run(new Form1());
-             //   Application.Run(new FormScanCode());
+            //Application.Run(new Login());
+            //Application.Run(new Form1());
+            //   Application.Run(new FormScanCode());
             //if (new Login().ShowDialog() == DialogResult.OK)
             //{
             //    Application.Run(new ProdModelAdd());

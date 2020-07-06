@@ -107,6 +107,12 @@
     <Compile Include="FormScanCode.Designer.cs">
       <DependentUpon>FormScanCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFillCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFillCode.Designer.cs">
+      <DependentUpon>FrmFillCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormScanCode.resx">
       <DependentUpon>FormScanCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFillCode.resx">
+      <DependentUpon>FrmFillCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModelList.resx">
       <DependentUpon>ModelList.cs</DependentUpon>

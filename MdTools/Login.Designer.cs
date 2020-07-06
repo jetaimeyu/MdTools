@@ -46,7 +46,6 @@
             this.tbUser.Location = new System.Drawing.Point(68, 164);
             this.tbUser.Margin = new System.Windows.Forms.Padding(4);
             this.tbUser.Name = "tbUser";
-            this.tbUser.ReadOnly = true;
             this.tbUser.Size = new System.Drawing.Size(185, 30);
             this.tbUser.TabIndex = 13;
             this.tbUser.Text = "ppj@80038203";

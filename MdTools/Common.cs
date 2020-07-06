@@ -30,5 +30,10 @@ namespace MdTools
         public static string ModelListUrl = WebApi + "/50/api/v1/Prod/GetWeiXinDzSkuListByProId";
 
 
+        //http://192.168.1.51:8001/api/v1/Comp/CompCacheCode
+        //码池填充
+        public static string FillCodeUrl = ConfigurationManager.AppSettings["WebApiCode"] + "/api/v1/Comp/CompCacheCode";
+        public static string FillCodeCountUrl = ConfigurationManager.AppSettings["WebApiCode"] + "/api/v1/Comp/GetCompCacheCodeCount";
+
     }
 }

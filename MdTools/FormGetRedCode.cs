@@ -119,16 +119,12 @@ namespace MdTools
         {
             try
             {
-                MyLog.ILog.Error("日志Error");
-                MyLog.ILog.Warn("日志Warn");
-                MyLog.ILog.Info("日志Info");
-                MyLog.ILog.Debug("日志Debug");
-            
-
+                MyLog.ILog.Error("邮件测试");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                MyLog.ILog.Error(ex);
             }
         }
     }
